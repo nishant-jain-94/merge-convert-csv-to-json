@@ -1,0 +1,17 @@
+{
+  "name": "merge-csv-files-to-json",
+  "version": "1.0.0",
+  "description": "Merges all the csv files and converts them to json",
+  "main": "index.js",
+  "author": "Nishant Jain",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^3.1.0",
+    "csvtojson": "^2.0.10",
+    "glob": "^7.1.5"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0",
+    "mock-fs": "^4.10.3"
+  }
+}
