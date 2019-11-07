@@ -12,13 +12,9 @@ const optionDefinitions = [
   { name: 'outputTo', type: String },
 ];
 
-
 try {
   const options = commandLineArgs(optionDefinitions);
-  const valid = options.help || (
-    options.pattern
-    && options.outputTo
-  );
+  const valid = options.pattern && options.outputTo;
 
   if (valid) {
     mergeConvertCsv2Json(options);

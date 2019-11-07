@@ -5,4 +5,21 @@ node_js:
 before_script:
   - yarn install
 script:
+  - yarn run lint
   - yarn run test
+before_deploy:
+  - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz ${REPO}
+deploy:
+  - provider: npm
+    email: "$NPM_EMAIL"
+    api_key: "$NPM_API_TOKEN"
+    on:
+      branch: master
+      tag: true
+  - provider: releases
+    api_key: "$GITHUB_OAUTH_TOKEN"
+    file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
+    skip_cleanup: true
+    on:
+      branch: master
+      tag: true
