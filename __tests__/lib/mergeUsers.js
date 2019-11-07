@@ -1,14 +1,12 @@
 const fs = require('fs');
 const mock = require('mock-fs');
-const { mergeUsers } = require('../../utils/mergeUsers');
+const { mergeUsers } = require('../../lib/mergeUsers');
 
-beforeAll(() => {
-  return mock({
-    '/tmp/a.users.csv': 'username,email,organization,password\nsachin.grover,sachin@gmail.com,StackRoute,password@123\n',
-    '/tmp/b.users.csv': 'username,email,organization,password\nsagar.patke,sagar.patke@gmail.com,StackRoute,password@123\n',
-    '/tmp/users.json': '',
-  })
-});
+beforeAll(() => mock({
+  '/tmp/a.users.csv': 'username,email,organization,password\nsachin.grover,sachin@gmail.com,StackRoute,password@123\n',
+  '/tmp/b.users.csv': 'username,email,organization,password\nsagar.patke,sagar.patke@gmail.com,StackRoute,password@123\n',
+  '/tmp/users.json': '',
+}));
 
 test('Test Merge Groups', (done) => {
   const userFiles = [
@@ -29,12 +27,12 @@ test('Test Merge Groups', (done) => {
         email: 'sagar.patke@gmail.com',
         organization: 'StackRoute',
         password: 'password@123',
-      }
+      },
     };
     const actual = JSON.parse(fs.readFileSync('/tmp/users.json', 'utf8'));
     expect(actual).toMatchObject(expected);
     done(err);
-  }
+  };
 
   mergeUsers(userFiles, '/tmp/users.json', testCb);
 });

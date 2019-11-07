@@ -1,4 +1,4 @@
-const { listToMapBy } = require('../../utils/listToMap');
+const { keyBy } = require('../../lib/keyBy');
 
 test('listToMap :: Should convert the listToMap', (done) => {
   const users = [
@@ -6,19 +6,20 @@ test('listToMap :: Should convert the listToMap', (done) => {
       username: 'sachin.grover',
       email: 'sachin.grover@stackroute.in',
       organization: 'StackRoute',
-      password: 'password@123'
-    }
+      password: 'password@123',
+    },
   ];
   const testCb = (err, actualValue) => {
-    const expectedValue = { "sachin.grover@stackroute.in": {
+    const expectedValue = {
+      'sachin.grover@stackroute.in': {
         username: 'sachin.grover',
         email: 'sachin.grover@stackroute.in',
         organization: 'StackRoute',
-        password: 'password@123'
-      } 
+        password: 'password@123',
+      },
     };
     expect(actualValue).toMatchObject(expectedValue);
     done(err);
-  }
-  listToMapBy("email")(users, testCb)
+  };
+  keyBy('email')(users, testCb);
 });

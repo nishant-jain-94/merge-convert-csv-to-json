@@ -5,12 +5,27 @@
   "main": "index.js",
   "author": "Nishant Jain",
   "license": "MIT",
+  "scripts": {
+    "jest": "jest",
+    "eslint": "eslint",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
   "dependencies": {
     "async": "^3.1.0",
+    "bunyan": "^1.8.12",
+    "bunyan-format": "^0.2.1",
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0",
     "csvtojson": "^2.0.10",
-    "glob": "^7.1.5"
+    "glob": "^7.1.5",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
     "jest": "^24.9.0",
     "mock-fs": "^4.10.3"
   }

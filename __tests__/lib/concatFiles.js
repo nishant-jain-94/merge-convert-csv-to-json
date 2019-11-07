@@ -1,6 +1,6 @@
 const mock = require('mock-fs');
 
-const { concatFiles } = require('../../utils/concatFiles');
+const { concatFiles } = require('../../lib/concatFiles');
 
 beforeAll(() => {
   return mock({
@@ -9,7 +9,7 @@ beforeAll(() => {
   });
 });
 
-test('Given set of csv files it should return the merged json', done => {
+test('Given set of csv files it should return the merged json', (done) => {
   const testCb = (err, values) => {
     const userSachin = {
       username: 'sachin.grover',
@@ -24,11 +24,18 @@ test('Given set of csv files it should return the merged json', done => {
       organization: 'StackRoute',
       password: 'password@123',
     };
-    const expected = [ userSachin, userSagar ];
+    const expected = [userSachin, userSagar];
     expect(values).toEqual(expect.arrayContaining(expected));
     done(err);
   };
   concatFiles(['/tmp/a.csv', '/tmp/b.csv'])(testCb);
+});
+
+test('Given a non existing path it should throw error', (done) => {
+  const testCb = (err, values) => {
+    if (err) done();
+  };
+  concatFiles(['/tmp/d.csv'])(testCb);
 });
 
 afterAll(async () => {
