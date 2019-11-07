@@ -8,6 +8,7 @@ script:
   - yarn run lint
   - yarn run test
 before_deploy:
+  - echo $SLACK_TOKEN
   - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz ${REPO}
 notifications:
   slack: "theselftalk:$SLACK_TOKEN"
