@@ -9,6 +9,8 @@ script:
   - yarn run test
 before_deploy:
   - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz ${REPO}
+notifications:
+  slack: 'theselftalk:${SLACK_TOKEN}'
 deploy:
   - provider: npm
     email: "$NPM_EMAIL"
