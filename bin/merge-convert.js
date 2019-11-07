@@ -16,8 +16,8 @@ const optionDefinitions = [
 try {
   const options = commandLineArgs(optionDefinitions);
   const valid = options.help || (
-    options.pattern &&
-    options.outputTo
+    options.pattern
+    && options.outputTo
   );
 
   if (valid) {
@@ -28,4 +28,3 @@ try {
 } catch (e) {
   console.log(usage);
 }
-

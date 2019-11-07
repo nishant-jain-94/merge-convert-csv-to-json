@@ -2,12 +2,10 @@ const mock = require('mock-fs');
 
 const { concatFiles } = require('../../lib/concatFiles');
 
-beforeAll(() => {
-  return mock({
-    '/tmp/a.csv': 'username,email,organization,password\nsachin.grover,sachin@gmail.com,StackRoute,password@123\n',
-    '/tmp/b.csv': 'username,email,organization,password\nsagar.patke,sagar.patke@gmail.com,StackRoute,password@123\n',
-  });
-});
+beforeAll(() => mock({
+  '/tmp/a.csv': 'username,email,organization,password\nsachin.grover,sachin@gmail.com,StackRoute,password@123\n',
+  '/tmp/b.csv': 'username,email,organization,password\nsagar.patke,sagar.patke@gmail.com,StackRoute,password@123\n',
+}));
 
 test('Given set of csv files it should return the merged json', (done) => {
   const testCb = (err, values) => {
@@ -32,7 +30,7 @@ test('Given set of csv files it should return the merged json', (done) => {
 });
 
 test('Given a non existing path it should throw error', (done) => {
-  const testCb = (err, values) => {
+  const testCb = (err) => {
     if (err) done();
   };
   concatFiles(['/tmp/d.csv'])(testCb);
