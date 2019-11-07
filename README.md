@@ -1,4 +1,4 @@
-# merge-convert-csv-files-to-json
+# merge-convert-csv-to-json
 
 Merges all the csv files and converts it to json.
 
