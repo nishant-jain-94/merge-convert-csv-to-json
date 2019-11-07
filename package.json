@@ -10,12 +10,13 @@
     "eslint": "eslint",
     "lint": "eslint .",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage && codecov"
   },
   "dependencies": {
     "async": "^3.1.0",
     "bunyan": "^1.8.12",
     "bunyan-format": "^0.2.1",
+    "codecov": "^3.6.1",
     "command-line-args": "^5.1.1",
     "command-line-usage": "^6.1.0",
     "csvtojson": "^2.0.10",
