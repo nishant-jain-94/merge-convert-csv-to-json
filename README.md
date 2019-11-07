@@ -1,7 +1,12 @@
 # merge-convert-csv-files-to-json
 
-Merge csvfiles and convert them into JSONList/JSONMap and output the merged result to a file
+Merges all the csv files and converts it to json.
 
-## Usage
+## Options
 
-merge-convert
+```
+--pattern pattern         The pattern of the input files to process.
+--keyby propertyName      The name of the property to keyby.
+--assignTo propertyName   The name of the property to assign the result to.
+--outputTo filePath       The filepath to output the result to.
+```
