@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/nishant-jain-94/merge-convert-csv-to-json.svg?branch=master)](https://travis-ci.org/nishant-jain-94/merge-convert-csv-to-json)
 
+[![Coverage Status](https://coveralls.io/repos/github/nishant-jain-94/merge-convert-csv-to-json/badge.svg?branch=master)](https://coveralls.io/github/nishant-jain-94/merge-convert-csv-to-json?branch=master)
+
 # merge-convert-csv-to-json
 
 Merges all the csv files and converts it to json.
