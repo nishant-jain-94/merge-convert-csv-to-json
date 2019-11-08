@@ -8,7 +8,8 @@ script:
   - yarn run lint
   - yarn run test:coverage:coveralls
 before_deploy:
-  - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz ${REPO}
+  - tar -zcf ${TRAVIS_BUILD_DIR}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz .
+  - zip -qr ${TRAVIS_BUILD_DIR}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.zip . -x *.git* coverage/\* node_modules/\*
 notifications:
   slack: theselftalk:EHiDWYYgq34Y172TrHTqA16W
 deploy:
@@ -20,7 +21,7 @@ deploy:
       tag: true
   - provider: releases
     api_key: "$GITHUB_OAUTH_TOKEN"
-    file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
+    file: ${TRAVIS_BUILD_DIR}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
     skip_cleanup: true
     on:
       branch: master
