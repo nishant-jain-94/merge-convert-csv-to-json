@@ -18,11 +18,11 @@ deploy:
     api_key: "$NPM_API_TOKEN"
     on:
       branch: master
-      tag: true
+      tags: true
   - provider: releases
     api_key: "$GITHUB_OAUTH_TOKEN"
     file: ${TRAVIS_BUILD_DIR}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
     skip_cleanup: true
     on:
       branch: master
-      tag: true
+      tags: true
