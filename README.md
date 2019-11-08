@@ -22,7 +22,7 @@ yarn add merge-convert-csv-to-json
 
 ```
 --pattern pattern         The pattern of the input files to process.
---keyby propertyName      The name of the property to keyby.
+--keyBy propertyName      The name of the property to keyby.
 --assignTo propertyName   The name of the property to assign the result to.
 --outputTo filePath       The filepath to output the result to.
 ```
