@@ -1,6 +1,6 @@
 {
   "name": "merge-convert-csv-to-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Merges all the csv files and converts it to json ",
   "main": "bin/merge-convert.js",
   "author": "Nishant Jain",
