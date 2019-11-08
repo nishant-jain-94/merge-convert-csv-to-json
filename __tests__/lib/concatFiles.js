@@ -3,23 +3,23 @@ const mock = require('mock-fs');
 const { concatFiles } = require('../../lib/concatFiles');
 
 beforeAll(() => mock({
-  '/tmp/a.csv': 'username,email,organization,password\nsachin.grover,sachin@gmail.com,StackRoute,password@123\n',
-  '/tmp/b.csv': 'username,email,organization,password\nsagar.patke,sagar.patke@gmail.com,StackRoute,password@123\n',
+  '/tmp/a.csv': 'username,email,organization,password\ntommy.jones,tommy.jones@northwindtraders.com,NorthwindTraders,password@123\n',
+  '/tmp/b.csv': 'username,email,organization,password\nanne.frank,anne.frank@northwindtraders.com,NorthwindTraders,password@123\n',
 }));
 
 test('Given set of csv files it should return the merged json', (done) => {
   const testCb = (err, values) => {
     const userSachin = {
-      username: 'sachin.grover',
-      email: 'sachin@gmail.com',
-      organization: 'StackRoute',
+      username: 'tommy.jones',
+      email: 'tommy.jones@northwindtraders.com',
+      organization: 'NorthwindTraders',
       password: 'password@123',
     };
 
     const userSagar = {
-      username: 'sagar.patke',
-      email: 'sagar.patke@gmail.com',
-      organization: 'StackRoute',
+      username: 'anne.frank',
+      email: 'anne.frank@northwindtraders.com',
+      organization: 'NorthwindTraders',
       password: 'password@123',
     };
     const expected = [userSachin, userSagar];

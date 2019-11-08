@@ -15,12 +15,13 @@ const optionDefinitions = [
 try {
   const options = commandLineArgs(optionDefinitions);
   const valid = options.pattern && options.outputTo;
-
   if (valid) {
     mergeConvertCsv2Json(options);
   } else {
+    console.log('invalid');
     console.log(usage);
   }
 } catch (e) {
+  console.log(e);
   console.log(usage);
 }

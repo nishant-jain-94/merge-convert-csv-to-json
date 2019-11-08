@@ -4,7 +4,7 @@ const { mergeGroups } = require('../../lib/mergeGroups');
 
 beforeAll(() => mock({
   '/tmp/a.group.csv': 'group_name,group_description\ncgi-wave-1,A Group for entire CGI Wave 1\n',
-  '/tmp/b.group.csv': 'group_name,group_description\nstackroute-mentors,Group Created for StackRoute mentors\n',
+  '/tmp/b.group.csv': 'group_name,group_description\nNorthwindTraders-mentors,Group Created for NorthwindTraders mentors\n',
   '/tmp/groups.json': '',
 }));
 
@@ -20,9 +20,9 @@ test('Test Merge Groups', (done) => {
         group_name: 'cgi-wave-1',
         group_description: 'A Group for entire CGI Wave 1',
       },
-      'stackroute-mentors': {
-        group_name: 'stackroute-mentors',
-        group_description: 'Group Created for StackRoute mentors',
+      'NorthwindTraders-mentors': {
+        group_name: 'NorthwindTraders-mentors',
+        group_description: 'Group Created for NorthwindTraders mentors',
       },
     };
     const actual = JSON.parse(fs.readFileSync('/tmp/groups.json', 'utf8'));

@@ -3,18 +3,18 @@ const { keyBy } = require('../../lib/keyBy');
 test('listToMap :: Should convert the listToMap', (done) => {
   const users = [
     {
-      username: 'sachin.grover',
-      email: 'sachin.grover@stackroute.in',
-      organization: 'StackRoute',
+      username: 'tommy.jones',
+      email: 'tommy.jones@NorthwindTraders.in',
+      organization: 'NorthwindTraders',
       password: 'password@123',
     },
   ];
   const testCb = (err, actualValue) => {
     const expectedValue = {
-      'sachin.grover@stackroute.in': {
-        username: 'sachin.grover',
-        email: 'sachin.grover@stackroute.in',
-        organization: 'StackRoute',
+      'tommy.jones@NorthwindTraders.in': {
+        username: 'tommy.jones',
+        email: 'tommy.jones@NorthwindTraders.in',
+        organization: 'NorthwindTraders',
         password: 'password@123',
       },
     };

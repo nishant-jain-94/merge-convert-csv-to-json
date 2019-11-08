@@ -3,8 +3,8 @@ const mock = require('mock-fs');
 const { mergeUsers } = require('../../lib/mergeUsers');
 
 beforeAll(() => mock({
-  '/tmp/a.users.csv': 'username,email,organization,password\nsachin.grover,sachin@gmail.com,StackRoute,password@123\n',
-  '/tmp/b.users.csv': 'username,email,organization,password\nsagar.patke,sagar.patke@gmail.com,StackRoute,password@123\n',
+  '/tmp/a.users.csv': 'username,email,organization,password\ntommy.jones,tommy.jones@northwindtraders.com,NorthwindTraders,password@123\n',
+  '/tmp/b.users.csv': 'username,email,organization,password\nanne.frank,anne.frank@northwindtraders.com,NorthwindTraders,password@123\n',
   '/tmp/users.json': '',
 }));
 
@@ -16,16 +16,16 @@ test('Test Merge Groups', (done) => {
 
   const testCb = (err) => {
     const expected = {
-      'sachin@gmail.com': {
-        username: 'sachin.grover',
-        email: 'sachin@gmail.com',
-        organization: 'StackRoute',
+      'tommy.jones@northwindtraders.com': {
+        username: 'tommy.jones',
+        email: 'tommy.jones@northwindtraders.com',
+        organization: 'NorthwindTraders',
         password: 'password@123',
       },
-      'sagar.patke@gmail.com': {
-        username: 'sagar.patke',
-        email: 'sagar.patke@gmail.com',
-        organization: 'StackRoute',
+      'anne.frank@northwindtraders.com': {
+        username: 'anne.frank',
+        email: 'anne.frank@northwindtraders.com',
+        organization: 'NorthwindTraders',
         password: 'password@123',
       },
     };
