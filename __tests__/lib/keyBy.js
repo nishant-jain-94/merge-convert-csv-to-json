@@ -1,6 +1,6 @@
 const { keyBy } = require('../../lib/keyBy');
 
-test('listToMap :: Should convert the listToMap', (done) => {
+test('Should convert the listToMap', (done) => {
   const users = [
     {
       username: 'tommy.jones',
