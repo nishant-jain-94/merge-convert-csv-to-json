@@ -4,7 +4,15 @@
 
 Merges all the csv files and converts it to json.
 
-## Installation
+#### :rocket: Features
+
+- Merge all the `CSV` files and convert into single `JSON` file.
+- Merge all the `CSV` files, convert it to `JSON` object, assign it to a `JSON field` an then store it in a `JSON` file.
+- Merge all the `CSV` files, convert it to `JSON` with every object *keyedBy* a `JSON` field and then store it to a `JSON` file.
+- Merge all the `CSV` files, convert it to `JSON` with every object *keyedBy* a `JSON` field, assign the object to a `JSON` field and then store it to a `JSON` file.
+
+
+## Installation, Options and Usage
 
 #### Using NPM
 
@@ -18,7 +26,7 @@ npm install -g merge-convert-csv-to-json
 yarn add merge-convert-csv-to-json
 ```
 
-## Options
+#### Options
 
 ```
 --pattern pattern         The pattern of the input files to process.
@@ -27,7 +35,7 @@ yarn add merge-convert-csv-to-json
 --outputTo filePath       The filepath to output the result to.
 ```
 
-## Usage
+#### Usage
 
 - Merge all the `CSV` files and convert into single `JSON` file.
   ```
