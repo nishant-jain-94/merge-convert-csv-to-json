@@ -2,9 +2,20 @@
   "name": "merge-csv-files-to-json",
   "version": "1.0.0",
   "description": "Merges all the csv files and converts it to json ",
-  "main": "index.js",
+  "main": "bin/merge-convert.js",
   "author": "Nishant Jain",
   "license": "MIT",
+  "bin": {
+    "merge-convert": "./bin/merge-convert.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nishant-jain-94/merge-convert-csv-to-json"
+  },
+  "bugs": {
+    "url": "https://github.com/nishant-jain-94/merge-convert-csv-to-json/issues",
+    "email": "nishantkumarajain@gmail.com"
+  },
   "scripts": {
     "jest": "jest",
     "eslint": "eslint",
