@@ -1,0 +1,48 @@
+{
+  "name": "merge-convert-csv-to-json",
+  "version": "1.0.0",
+  "description": "Merges all the csv files and converts it to json ",
+  "main": "bin/merge-convert.js",
+  "author": "Nishant Jain",
+  "license": "MIT",
+  "bin": {
+    "merge-convert": "./bin/merge-convert.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nishant-jain-94/merge-convert-csv-to-json"
+  },
+  "bugs": {
+    "url": "https://github.com/nishant-jain-94/merge-convert-csv-to-json/issues",
+    "email": "nishantkumarajain@gmail.com"
+  },
+  "scripts": {
+    "jest": "jest",
+    "eslint": "eslint",
+    "lint": "eslint .",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:coverage:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "async": "^3.1.0",
+    "bunyan": "^1.8.12",
+    "bunyan-format": "^0.2.1",
+    "command-line-args": "^5.1.1",
+    "command-line-usage": "^6.1.0",
+    "csvtojson": "^2.0.10",
+    "glob": "^7.1.5",
+    "lodash": "^4.17.15"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.7",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0",
+    "mock-fs": "^4.10.3"
+  }
+}
