@@ -1,5 +1,5 @@
 {
-  "name": "merge-csv-files-to-json",
+  "name": "merge-convert-csv-to-json",
   "version": "1.0.0",
   "description": "Merges all the csv files and converts it to json ",
   "main": "bin/merge-convert.js",
