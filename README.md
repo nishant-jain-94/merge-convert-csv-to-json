@@ -10,7 +10,7 @@ Merges all the csv files and converts it to json.
 - Merge all the `CSV` files, convert it to `JSON` object, assign it to a `JSON field` an then store it in a `JSON` file.
 - Merge all the `CSV` files, convert it to `JSON` with every object *keyedBy* a `JSON` field and then store it to a `JSON` file.
 - Merge all the `CSV` files, convert it to `JSON` with every object *keyedBy* a `JSON` field, assign the object to a `JSON` field and then store it to a `JSON` file.
-
+- Merge all the `CSV` files, convert into single `JSON` file by converting string values into map by providing `keyValueSplitter`, `propertySplitter`, `keyIndex`, `valueIndex`, `field` and `pluginType` as `transfromPropertyToMap`
 
 ## Installation
 
@@ -52,4 +52,30 @@ yarn add merge-convert-csv-to-json
 - Merge all the `CSV` files, convert it to `JSON` with every object *keyedBy* a `JSON` field, assign the object to a `JSON` field and then store it to a `JSON` file.
   ```
   merge-convert --pattern "/users/*.users.csv" --keyBy email --assignTo users --outputTo /users/merged.users.json
+  ```
+- Merge all the `CSV` files, convert into single `JSON` file by converting string values into map by providing `keyValueSplitter`, `propertySplitter`, `keyIndex`, `valueIndex`, `field` and `pluginType` as `transfromPropertyToMap`
+  ```json
+  # transformer-config.json
+  [
+    {
+      pluginType: "transformPropertyToMap",
+      keyValueSplitter: ":",
+      propertySplitter: ",",
+      keyIndex: "0",
+      valueIndex: "1",
+      field: "groups_access"
+    },
+    {
+      pluginType: "transformPropertyToMap",
+      keyValueSplitter: ":",
+      propertySplitter: ",",
+      keyIndex: "0",
+      valueIndex: "1",
+      field: "project_access"
+    }
+  ]
+  ```
+
+  ```
+  merge-convert --pattern "/users/*.users.csv" --outputTo /users/merged.users.json --transformerConfig transformer-config.json
   ```

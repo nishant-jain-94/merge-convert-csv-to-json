@@ -10,6 +10,7 @@ const optionDefinitions = [
   { name: 'keyBy', type: String },
   { name: 'assignTo', type: String },
   { name: 'outputTo', type: String },
+  { name: 'transformerConfig', type: String },
 ];
 
 try {
