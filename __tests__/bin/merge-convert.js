@@ -141,11 +141,11 @@ test('Should merge all the CSV files and convert into single JSON file with Tran
     password: 'password@123',
     groups_access: {
       'northwind-wave-1': 'guest',
-      'northwind-auditors': 'guest'
+      'northwind-auditors': 'guest',
     },
     project_access: {
       'northwind-wave-1': 'guest',
-      'northwind-auditors': 'guest'
+      'northwind-auditors': 'guest',
     },
   }];
   childProcess.exec(cmd, (err, stdout, stderr) => {
